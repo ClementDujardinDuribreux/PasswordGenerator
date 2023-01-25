@@ -23,6 +23,8 @@ class Window:
         self.window.config(bg='#C0C0C0')
         self.window.iconbitmap('image/logo-cadena.ico')
         self.frame = Frame(self.window, bg='#C0C0C0')
+        self.frame2 = Frame(self.window, bg='#C0C0C0',)
+
         menu = Menu(self.window)
 
 
@@ -40,25 +42,27 @@ class Window:
             global MailEntry
             global PasswordEntry
 
-            NameEntry = Entry(self.frame, width=15)
+            NameEntry = Entry(self.frame2, width=40)
             NameEntry.grid(column=2,row=2)
-            LabelName = Label(self.frame, text='Name :', width=15)
+            LabelName = Label(self.frame2, font=('Arial Black', 15), text='Name :', width=9, height=2, background='#C0C0C0', anchor=E)
             LabelName.grid(column=1, row=2)
 
-            MailEntry = Entry(self.frame, width=15)
+            MailEntry = Entry(self.frame2, width=40)
             MailEntry.grid(column=2,row=3)
-            LabelMail = Label(self.frame, text='Mail* :', width=15)
+            LabelMail = Label(self.frame2, font=('Arial Black', 15), text='Mail / ID * :', width=9, height=2, background='#C0C0C0', anchor=E)
             LabelMail.grid(column=1, row=3)
 
-            PasswordEntry = Entry(self.frame, width=15)
+            PasswordEntry = Entry(self.frame2, width=40)
             PasswordEntry.grid(column=2,row=4)
-            LabelPassword = Label(self.frame, text='Password :', width=15)
+            LabelPassword = Label(self.frame2, font=('Arial Black', 15), text='Password :', width=9, height=2, background='#C0C0C0', anchor=E)
             LabelPassword.grid(column=1, row=4)
 
-            ButtonValidate = Button(self.frame, bg='#000000', width=15, height=2, command=Window.AddList)
+            
+            ButtonValidate = Button(self.frame, bg='#FFFFFF', borderwidth=3, width=21, height=1, text=' >    ADD    <', font=('Arial Black', 18), command=Window.AddList)
             ButtonValidate.grid(column=1, row=1)
 
         self.frame.pack(expand=YES)
+        self.frame2.pack(expand=YES)
         self.window.config(menu= menu)
         self.window.mainloop()
 
