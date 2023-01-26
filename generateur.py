@@ -5,11 +5,9 @@ class Password:
     number = '0123456789'
     maj = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     mini = 'abcdefghijklmnopqrstuvwxyz'
-    special = '!%#@?/-_|$£*'
+    special = '!%#?/[]()*'
 
-
-    def __init__(self, name, number, maj, mini, special) -> None:
-        self.name = name
+    def __init__(self, number, maj, mini, special) -> None:
         self.number = number
         self.maj = maj
         self.mini = mini
@@ -39,7 +37,7 @@ class Password:
             
             elif rand == 4:
                 if Password.countSpecial(password) != self.special:
-                    randomCaractere = random.randint(0,11)
+                    randomCaractere = random.randint(0,9)
                     password += Password.special[randomCaractere]
 
         self.password = password
